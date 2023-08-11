@@ -9,10 +9,12 @@ It also comes with a GPS data interface to handle the most popular GPS NMEA sent
 Confirmed on MSVC 2013 and GCC 4.8.4.
 
 ## Fork Changelog
-This fork has been updated to adjust the library build to support integration into ROS2 projects
+This fork has been updated to adjust the library build to support integration into ROS2 projects.
 
-* 2023-08-11: Update project structure to export as a ROS2 package
+In compliance with the Zlib license, any changes made to the original source will be marked as such 
 
+* 2023-08-11: Update project structure (CMakeLists, package.xml) to export as a ROS2 package
+* "" "": Updated naming to be `nematode_ros2`
 
 
 ## It's too easy!

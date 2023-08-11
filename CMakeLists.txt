@@ -1,5 +1,5 @@
-# Updated from original: https://github.com/ckgt/NemaTode
-# to be compatible with ROS2
+# Updated from original: https://github.com/ckgt/NemaTode to be compatible with ROS2
+# Credit goes to the original authors for the ground work of this library
 cmake_minimum_required(VERSION 3.5)
 project(nematode_ros2)
 
@@ -7,13 +7,7 @@ if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 17)
 endif()
 
-
 find_package(ament_cmake REQUIRED)
-
-# set(CMAKE_RELEASE_POSTFIX "" CACHE STRING "Add postfix to target for Release build.")
-# set(CMAKE_DEBUG_POSTFIX "d" CACHE STRING "Add postfix to target for Debug build.")
-# set(CMAKE_RELWITHDEBINFO_POSTFIX "rd" CACHE STRING "Add postfix to target for RelWithDebInfo build.")
-# set(CMAKE_MINSIZEREL_POSTFIX "s" CACHE STRING "Add postfix to target for MinSizeRel build")
 
 set(headers
 	include/nmeaparse/Event.h
@@ -34,11 +28,6 @@ set(sources
 )
 
 add_library(${PROJECT_NAME} STATIC ${headers} ${sources})
-
-# set_target_properties(${PROJECT_NAME} PROPERTIES
-# 	VERSION ${PROJECT_VERSION}
-# 	SOVERSION 1
-# )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
 	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -77,12 +66,12 @@ ament_export_libraries(nematode)
 # 	DESTINATION ${INSTALL_CONFIGDIR}
 # )
 
-# # build demo_advanced
-# add_executable(demo_advanced demo_advanced.cpp)
-# target_link_libraries(demo_advanced ${PROJECT_NAME})
+# build demo_advanced
+add_executable(demo_advanced demo_advanced.cpp)
+target_link_libraries(demo_advanced ${PROJECT_NAME})
 
-# # build demo_simple
-# add_executable(demo_simple demo_simple.cpp)
-# target_link_libraries(demo_simple ${PROJECT_NAME})
+# build demo_simple
+add_executable(demo_simple demo_simple.cpp)
+target_link_libraries(demo_simple ${PROJECT_NAME})
 
 ament_package()
