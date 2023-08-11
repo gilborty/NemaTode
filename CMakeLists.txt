@@ -37,7 +37,7 @@ ament_export_libraries(${PROJECT_NAME})
 
 install(FILES
   ${headers}
-  DESTINATION include/${PROJECT_NAME})
+  DESTINATION include/${PROJECT_NAME}/nmeaparse)
 
 install(TARGETS ${PROJECT_NAME} EXPORT export_${PROJECT_NAME}
   ARCHIVE DESTINATION lib
