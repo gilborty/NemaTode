@@ -8,7 +8,7 @@ It also comes with a GPS data interface to handle the most popular GPS NMEA sent
 
 Confirmed on MSVC 2013 and GCC 4.8.4.
 
-## Fork Changelog
+## nmeatode_ros2 Changelog
 This fork has been updated to adjust the library build to support integration into ROS2 projects.
 
 In compliance with the Zlib license, any changes made to the original source will be marked as such 
