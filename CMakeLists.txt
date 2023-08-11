@@ -34,7 +34,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 	$<INSTALL_INTERFACE:include>
 )
 ament_export_include_directories(include)
-ament_export_libraries(nematode)
+ament_export_libraries(${PROJECT_NAME})
 
 # include(GNUInstallDirs)
 # set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake)
