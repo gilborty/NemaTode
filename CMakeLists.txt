@@ -28,7 +28,6 @@ set(sources
 )
 
 add_library(${PROJECT_NAME} STATIC ${headers} ${sources})
-
 target_include_directories(${PROJECT_NAME} PUBLIC
 	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 	$<INSTALL_INTERFACE:include>
@@ -36,6 +35,15 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 ament_export_include_directories(include)
 ament_export_libraries(${PROJECT_NAME})
 
+install(FILES
+  ${headers}
+  DESTINATION include/${PROJECT_NAME})
+
+install(TARGETS ${PROJECT_NAME} EXPORT export_${PROJECT_NAME}
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION lib/${PROJECT_NAME}
+)
 # include(GNUInstallDirs)
 # set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake)
 
